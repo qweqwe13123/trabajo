@@ -6,9 +6,15 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const nitroPreset = process.env.VERCEL
+  ? "vercel"
+  : process.env.NETLIFY
+    ? "netlify"
+    : process.env.NITRO_PRESET;
+
 export default defineConfig({
   nitro: {
-    preset: process.env.NITRO_PRESET,
+    preset: nitroPreset,
   },
   tanstackStart: {
   },
