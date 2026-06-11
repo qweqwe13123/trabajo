@@ -3,12 +3,11 @@
   "buildCommand": "vite build",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": null,
-  "build": {
-    "env": {
-      "NITRO_PRESET": "vercel"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/_shell.html"
     }
-  },
-  "env": {
-    "NITRO_PRESET": "vercel"
-  }
+  ]
 }
