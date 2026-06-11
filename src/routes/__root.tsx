@@ -86,13 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Trabajo Listo" },
       { property: "og:title", content: "Trabajo Listo — American-style resumes that get you hired" },
       { property: "og:description", content: "ATS-optimized resumes, English interview prep, and a clear U.S. job-search strategy for Spanish-speaking professionals." },
-      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image", content: "https://copy-em-all-carefully.lovable.app/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Trabajo Listo — American-style resumes that get you hired" },
       { name: "twitter:description", content: "ATS-optimized resumes, English interview prep, and a clear U.S. job-search strategy for Spanish-speaking professionals." },
-      { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "https://copy-em-all-carefully.lovable.app/og-image.jpg" },
     ],
     links: [
       {
