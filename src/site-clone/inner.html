@@ -15,9 +15,9 @@
         </nav>
         <section class="relative overflow-hidden">
             <div class="absolute inset-0 -z-10">
-                <div class="absolute inset-0 bg-gradient-to-b from-sky-100/70 via-sky-50/40 to-neutral-50"></div>
-                <div class="absolute top-20 -left-32 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-3xl"></div>
-                <div class="absolute top-40 right-0 w-[400px] h-[400px] bg-blue-100/50 rounded-full blur-3xl"></div>
+                <div class="absolute inset-0" style="background: linear-gradient(to bottom, #dbeafe 0%, #eff6ff 40%, #f5f7fa 100%);"></div>
+                <div class="absolute top-20 -left-32 w-[500px] h-[500px] rounded-full blur-3xl" style="background: rgba(125,211,252,0.45);"></div>
+                <div class="absolute top-40 right-0 w-[400px] h-[400px] rounded-full blur-3xl" style="background: rgba(191,219,254,0.55);"></div>
             </div>
             <div class="max-w-7xl mx-auto px-6 pt-16 lg:pt-24 pb-20">
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -194,7 +194,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full aspect-[4/3] bg-zinc-100 rounded-2xl ring-1 ring-zinc-200 overflow-hidden shadow-xl"><img src="/assets/ai-chat.jpg" alt="Expert team" class="w-full h-full object-cover" /></div>
+                    <div class="tl-reveal w-full aspect-[4/3] bg-zinc-100 rounded-2xl ring-1 ring-zinc-200 overflow-hidden shadow-xl"><img src="/assets/ai-chat.jpg" alt="Expert team" class="w-full h-full object-cover" /></div>
                 </div>
             </div>
         </section>
@@ -423,6 +423,19 @@
 
         <style>
             /* Clients marquee */
+            .tl-reveal {
+                opacity: 0;
+                transform: translateY(40px) scale(0.96);
+                transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
+                will-change: opacity, transform;
+            }
+            .tl-reveal.tl-reveal-in {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .tl-reveal { opacity: 1; transform: none; transition: none; }
+            }
             .marquee-mask {
                 overflow: hidden;
                 -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);

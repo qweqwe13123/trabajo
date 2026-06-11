@@ -347,3 +347,26 @@
   startTypewriter();
   setTimeout(startTypewriter, 300);
 })();
+
+(function(){
+  function initReveal(){
+    var els = document.querySelectorAll('.tl-reveal');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(e){ e.classList.add('tl-reveal-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) {
+          en.target.classList.add('tl-reveal-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    els.forEach(function(e){ io.observe(e); });
+  }
+  if (document.readyState !== 'loading') initReveal();
+  else document.addEventListener('DOMContentLoaded', initReveal);
+  setTimeout(initReveal, 400);
+})();
